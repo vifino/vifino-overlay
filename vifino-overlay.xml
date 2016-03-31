@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repositories encoding="UTF-8" version="1.1">
+  <repo priority="50" quality="experimental">
+    <name>vifino-overlay</name>
+    <description>vifino's personal overlay.</description>
+    <homepage>https://github.com/vifino/vifino-overlay</homepage>
+    <irc>ircs://irc.esper.net:6697/#vifino</irc>
+    <owner>
+      <email>vifino@tty.sh</email>
+      <name>Adrian "vifino" Pistol</name>
+    </owner>
+    <source type="git">https://github.com/vifino/vifino-overlay.git</source>
+    <feed>https://github.com/vifino/vifino-overlay/commits/master.atom</feed>
+  </repo>
+</repositories>
