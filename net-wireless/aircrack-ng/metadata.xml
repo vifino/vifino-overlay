@@ -25,5 +25,6 @@
 	<flag name="experimental">Build the "experimental" tools which may randomly fail to run properly</flag>
 	<flag name="netlink">Use netlink for channel control instead of WEXT</flag>
 	<flag name="unstable">Build the "unstable" tools which may randomly fail to run properly</flag>
+	<flag name="libressl">Use dev-libs/libressl instead of dev-libs/openssl for cryptography</flag>
 </use>
 </pkgmetadata>
