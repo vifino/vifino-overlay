@@ -4,7 +4,7 @@
  #include "wvtripledes.h"
  #include <assert.h>
  #include <openssl/rand.h>
-+#include <openssl/3des.h>
++#include <openssl/des.h>
  
  /***** WvTripleDESEncoder ****/
  
