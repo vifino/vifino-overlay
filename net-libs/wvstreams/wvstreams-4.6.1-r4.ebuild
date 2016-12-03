@@ -24,8 +24,10 @@ RESTRICT="test"
 RDEPEND="sys-libs/readline:0=
 	sys-libs/zlib
 	dbus? ( >=sys-apps/dbus-1.4.20 )
-	!libressl? ( dev-libs/openssl:0= )
-	libressl? ( dev-libs/libressl:0= )
+	ssl? (
+		!libressl? ( dev-libs/openssl:0= )
+		libressl? ( dev-libs/libressl:0= )
+	)
 	pam? ( virtual/pam )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
@@ -50,7 +52,8 @@ src_prepare() {
 		"${FILESDIR}"/${P}-openssl-1.0.0.patch \
 		"${FILESDIR}"/${P}-glibc212.patch \
 		"${FILESDIR}"/${P}-gcc47.patch \
-		"${FILESDIR}"/${P}-fix-c++14.patch
+		"${FILESDIR}"/${P}-fix-c++14.patch \
+		"${FILESDIR}"/${P}-bsd-source-deprecated.patch
 
 	sed -i \
 		-e 's:AM_CONFIG_HEADER:AC_CONFIG_HEADERS:' \
@@ -76,7 +79,7 @@ src_configure() {
 		$(use_enable debug) \
 		--disable-optimization \
 		$(use_with dbus) \
-		--with-openssl \
+		$(use_with ssl openssl) \
 		$(use_with pam) \
 		--without-tcl \
 		--without-qt \
