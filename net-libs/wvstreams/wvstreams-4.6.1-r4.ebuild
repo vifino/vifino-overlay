@@ -53,7 +53,8 @@ src_prepare() {
 		"${FILESDIR}"/${P}-glibc212.patch \
 		"${FILESDIR}"/${P}-gcc47.patch \
 		"${FILESDIR}"/${P}-fix-c++14.patch \
-		"${FILESDIR}"/${P}-bsd-source-deprecated.patch
+		"${FILESDIR}"/${P}-bsd-source-deprecated.patch \
+		"${FILESDIR}"/${P}-3des-openssl-include.patch
 
 	sed -i \
 		-e 's:AM_CONFIG_HEADER:AC_CONFIG_HEADERS:' \
