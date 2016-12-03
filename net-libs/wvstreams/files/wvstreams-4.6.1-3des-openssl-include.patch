@@ -1,8 +1,10 @@
---- crypo/wvtripledes.cc
-+++ crypo/wvtripledes.cc
-@@ -7,6 +7,7 @@ #include "wvtripledes.h"
+--- a/crypto/wvtripledes.cc
++++ b/crypto/wvtripledes.cc
+@@ -7,6 +7,7 @@
+ #include "wvtripledes.h"
  #include <assert.h>
  #include <openssl/rand.h>
 +#include <openssl/3des.h>
  
  /***** WvTripleDESEncoder ****/
+ 
