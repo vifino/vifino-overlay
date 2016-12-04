@@ -12,7 +12,7 @@ SRC_URI="https://rubinius-releases-rubinius-com.s3.amazonaws.com/${P}.tar.bz2"
 LICENSE="BSD"
 KEYWORDS="~amd64"
 SLOT="0"
-IUSE="+llvm"
+IUSE="+llvm libressl"
 
 RDEPEND="
 	llvm? ( >=sys-devel/llvm-3.6 )
