@@ -25,7 +25,7 @@ RDEPEND=">=dev-libs/boost-1.41.0
 	sys-apps/lsb-release
 	x11-libs/libX11
 	x11-libs/libXi
-	dev-qt/qtcore:5[ssl]
+	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtopengl:5
 	dev-qt/qtsql:5[sqlite]
