@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/radare/radare2"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="ssl +zip capstone"
+IUSE="ssl libressl +zip capstone"
 
 RDEPEND="
         ssl? ( 
