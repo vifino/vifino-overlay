@@ -6,14 +6,14 @@ EAPI=5
 
 inherit cmake-utils git-r3
 
-DESCRIPTION="remote support for Soapy SDR"
-HOMEPAGE="http://github.com/pothosware/SoapyRemote/wiki"
-EGIT_REPO_URI="https://github.com/pothosware/SoapyRemote.git"
+DESCRIPTION="Soapy SDR plugins for UHD devices"
+HOMEPAGE="http://github.com/pothosware/SoapyUHD/wiki"
+EGIT_REPO_URI="https://github.com/pothosware/SoapyUHD.git"
 EGIT_CLONE_TYPE="shallow"
 
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS=""
 
-RDEPEND="net-wireless/soapysdr"
+RDEPEND="net-wireless/soapysdr net-wireless/uhd dev-libs/boost"
 DEPEND="${RDEPEND}"
