@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-r3
+inherit autotools git-r3
 
 DESCRIPTION="Software-Defined Radio Digital Signal Processing Library"
 HOMEPAGE="http://liquidsdr.org"
@@ -23,9 +23,9 @@ DEPEND="${RDEPEND}"
 
 src_configure() {
 	einfo "Regenerating autotools files..."
-	aclocal || die "aclocal failed"
-	autoconf || die "autoconf failed"
-	autoheader || die "autheader failed"
+	eaclocal || die "eaclocal failed"
+	eautoconf || die "eautoconf failed"
+	eautoheader || die "eautoheader failed"
 
 	econf
 }

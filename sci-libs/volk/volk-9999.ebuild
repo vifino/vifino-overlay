@@ -16,6 +16,8 @@ SLOT="0"
 KEYWORDS=""
 
 RDEPEND=""
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-python/mako
+"
 
 CMAKE_BUILD_TYPE=Release
