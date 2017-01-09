@@ -22,6 +22,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_compile() {
+	cd embed
 	emake lib
 }
 
