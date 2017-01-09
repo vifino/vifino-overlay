@@ -23,10 +23,10 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 	cd embed
-	emake lib
+	emake PREFIX=/usr lib
 }
 
 src_install() {
 	cd embed
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" PREFIX=/usr install
 }
