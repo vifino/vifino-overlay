@@ -15,9 +15,17 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 
-RDEPEND=""
+RDEPEND="dev-libs/boost"
 DEPEND="${RDEPEND}
 	dev-python/mako
+	dev-python/six
 "
 
 CMAKE_BUILD_TYPE=Release
+
+src_configure() {
+	local mycmakeargs=(
+		$(cmake-utils_use_enable orc ORC)
+	)
+	cmake-utils_src_configure
+}

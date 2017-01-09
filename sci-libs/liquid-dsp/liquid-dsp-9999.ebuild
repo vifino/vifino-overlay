@@ -27,5 +27,5 @@ src_configure() {
 	eautoconf || die "eautoconf failed"
 	eautoheader || die "eautoheader failed"
 
-	econf
+	econf --libdir=/lib # completely wrong, but otherwise it installs to /usr/usr/lib, hopefully it will install to /usr/lib this way.
 }
