@@ -27,5 +27,6 @@ src_compile() {
 }
 
 src_install() {
+	cd embed
 	emake DESTDIR="${D}" install
 }
