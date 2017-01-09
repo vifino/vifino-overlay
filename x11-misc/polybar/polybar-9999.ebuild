@@ -32,3 +32,15 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 CMAKE_BUILD_TYPE=Release
+
+src_configure() {
+	local mycmakeargs=(
+		-DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python2
+		$(cmake-utils_use_enable alsa ALSA)
+		$(cmake-utils_use_enable mpd MPD)
+		$(cmake-utils_use_enable network NETWORK)
+		$(cmake-utils_use_enable i3wm I3)
+		$(cmake-utils_use_enable github CURL)
+	)
+	cmake-utils_src_configure
+}
