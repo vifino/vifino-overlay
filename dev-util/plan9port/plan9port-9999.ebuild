@@ -22,8 +22,6 @@ DEPEND="X? ( x11-apps/xauth )
 	            media-libs/fontconfig )"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}"
-
 PLAN9=/usr/lib/plan9
 EPLAN9="${EPREFIX}"${PLAN9}
 QA_MULTILIB_PATHS="${PLAN9}/.*/.*"
