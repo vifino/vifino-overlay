@@ -13,7 +13,6 @@ EGIT_CLONE_TYPE="shallow"
 
 LICENSE="9base BSD-4 MIT LGPL-2.1 BigelowHolmes"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="X aqua truetype"
 REQUIRED_USE="?? ( X aqua )"
 
