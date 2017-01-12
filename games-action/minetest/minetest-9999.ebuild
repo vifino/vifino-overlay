@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/minetest/${PN}.git"
 LICENSE="LGPL-2.1+ CC-BY-SA-3.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="+curl dedicated doc leveldb luajit nls redis +server +sound spatial +truetype"
+IUSE="+curl dedicated doc leveldb +luajit nls redis +server +sound spatial +truetype"
 
 RDEPEND="dev-db/sqlite:3
 	sys-libs/zlib
