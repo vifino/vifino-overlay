@@ -11,7 +11,7 @@ is_live && inherit git-r3
 
 DESCRIPTION=" Erlang build tool that makes it easy to compile and test Erlang applications and releases."
 HOMEPAGE="http://www.rebar3.org"
-is_live || SRC_URI="https://github.com/erlang/rebar3/archive/${PV}.tar.xz"
+is_live || SRC_URI="https://github.com/erlang/rebar3/archive/${PV}.tar.gz"
 EGIT_REPO_URI="https://github.com/erlang/rebar3.git"
 
 LICENSE="Apache"
