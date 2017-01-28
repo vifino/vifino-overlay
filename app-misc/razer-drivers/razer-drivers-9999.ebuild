@@ -19,6 +19,7 @@ SLOT="0"
 RDEPEND="
 	media-libs/libsdl2
 	media-libs/sdl2-image
+	sci-libs/fftw:3.0
 
 	>=dev-lang/python-3.4.5
 	dev-python/dbus-python
@@ -36,13 +37,15 @@ DEPEND="${RDEPEND}
 	app-misc/jq
 "
 
+BUILD_TARGETS="clean modules"
+BUILD_PARAMS="-C /usr/src/linux SUBDIRS=${S}/driver"
 MODULE_NAMES="
-	razerkbd(hid:${S}/driver)
-	razermouse(hid:${S}/driver)
-	razerfirefly(hid:${S}/driver)
-	razerkraken(hid:${S}/driver)
-	razermug(hid:${S}/driver)
-	razercore(hid:${S}/driver)
+	razerkbd(hid)
+	razermouse(hid)
+	razerfirefly(hid)
+	razerkraken(hid)
+	razermug(hid)
+	razercore(hid)
 "
 
 src_install() {
