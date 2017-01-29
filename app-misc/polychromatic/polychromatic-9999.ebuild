@@ -25,7 +25,7 @@ RDEPEND="
 	dev-python/requests
 
 	x11-libs/gtk+[introspection]
-	dev-libs/libappindicator[introspection]
+	dev-libs/libappindicator:3[introspection]
 	net-libs/webkit-gtk[introspection]
 "
 DEPEND="${RDEPEND}
