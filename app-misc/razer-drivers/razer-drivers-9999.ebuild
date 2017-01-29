@@ -41,12 +41,12 @@ DEPEND="${RDEPEND}
 BUILD_TARGETS="clean modules"
 BUILD_PARAMS="-j1 -C /usr/src/linux SUBDIRS=${S}/driver"
 MODULE_NAMES="
-	razerkbd(hid)
-	razermouse(hid)
-	razerfirefly(hid)
-	razerkraken(hid)
-	razermug(hid)
-	razercore(hid)
+	razerkbd(hid:${S}/driver)
+	razermouse(hid:${S}/driver)
+	razerfirefly(hid:${S}/driver)
+	razerkraken(hid:${S}/driver)
+	razermug(hid:${S}/driver)
+	razercore(hid:${S}/driver)
 "
 
 src_install() {
