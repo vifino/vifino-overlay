@@ -37,8 +37,9 @@ DEPEND="${RDEPEND}
 	app-misc/jq
 "
 
+# This is a bit weird, but it's end result is what we want.
 BUILD_TARGETS="clean modules"
-BUILD_PARAMS="-C /usr/src/linux SUBDIRS=${S}/driver"
+BUILD_PARAMS="-j1 -C /usr/src/linux SUBDIRS=${S}/driver"
 MODULE_NAMES="
 	razerkbd(hid)
 	razermouse(hid)
