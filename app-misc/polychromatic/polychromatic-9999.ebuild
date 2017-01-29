@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 "
 
 src_install() {
-	pythondir=$(python3 -c 'import sys; print(sys.path[-1])')
+	pythondir=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
 	dobin ${PN}-controller ${PN}-tray-applet
 
 	mkdir -p "${D}/usr/share"
