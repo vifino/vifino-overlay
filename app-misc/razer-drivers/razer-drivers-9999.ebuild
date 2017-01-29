@@ -52,7 +52,7 @@ MODULE_NAMES="
 src_install() {
 	linux-mod_src_install
 	emake DESTDIR="${D}" \
-		udev_install
-		daemon_install
+		udev_install \
+		daemon_install \
 		python_library_install
 }
