@@ -6,16 +6,19 @@ EAPI=5
 
 inherit eutils git-r3
 
-DESCRIPTION="X Resource Query, A program for querying the X Resources Database from the command line"
-HOMEPAGE="https://github.com/arianon/xrq"
+DESCRIPTION="utilities for getting info about displays. @tudurom's personal fork"
+HOMEPAGE="https://github.com/tudurom/disputils"
 SRC_URI=""
-EGIT_REPO_URI="https://github.com/arianon/xrq.git"
+EGIT_REPO_URI="https://github.com/tudurom/disputils.git"
 
 LICENSE="ISC"
 SLOT="0"
 IUSE=""
 
-RDEPEND="x11-libs/libX11"
+RDEPEND="
+	x11-libs/libxcb
+	x11-misc/wmutils-core
+"
 DEPEND="${RDEPEND}"
 
 src_install() {
