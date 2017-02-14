@@ -13,7 +13,7 @@ HOMEPAGE="http://www.radare.org"
 is_live || SRC_URI="http://www.radare.org/get/${P}.tar.xz"
 EGIT_REPO_URI="https://github.com/radare/radare2"
 
-LICENSE="GPL-2"
+LICENSE="LGPL-3"
 SLOT="0"
 IUSE="ssl libressl +zip capstone"
 
