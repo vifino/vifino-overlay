@@ -18,7 +18,7 @@ SLOT="0"
 IUSE="ssl libressl +zip capstone"
 
 RDEPEND="
-        ssl? ( 
+	ssl? (
 		!libressl? ( dev-libs/openssl:= )
 		libressl? ( dev-libs/libressl )
 	)
@@ -26,12 +26,12 @@ RDEPEND="
 	capstone? ( dev-libs/capstone )
 "
 DEPEND="${RDEPEND}
-        virtual/pkgconfig
+	virtual/pkgconfig
 "
 
 src_configure() {
-        econf \
-                $(use_with ssl openssl) \
+	econf \
+		$(use_with ssl openssl) \
 		$(use_with zip syszip) \
 		$(use_with capstone syscapstone)
 }
