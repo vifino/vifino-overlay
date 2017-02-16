@@ -5,7 +5,7 @@
 EAPI=4
 
 CONFIG_CHECK="~!BATMAN_ADV ~LIBCRC32C ~CRC16"
-MODULE_NAMES="${PN}(net:${S}:${S})"
+MODULE_NAMES="${PN}(net:${S}:${S}/build)"
 BUILD_TARGETS="all"
 
 inherit eutils linux-mod
