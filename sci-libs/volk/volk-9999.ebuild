@@ -14,6 +14,7 @@ EGIT_CLONE_TYPE="shallow"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
+IUSE="+orc"
 
 RDEPEND="dev-libs/boost"
 DEPEND="${RDEPEND}
