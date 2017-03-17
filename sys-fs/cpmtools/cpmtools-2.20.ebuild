@@ -13,7 +13,7 @@ SLOT="0"
 IUSE=""
 KEYWORDS="amd64 x86"
 
-RDEPEND="sys-lib/ncurses"
+RDEPEND="sys-libs/ncurses"
 DEPEND="${RDEPEND}"
 
 src_configure() {
