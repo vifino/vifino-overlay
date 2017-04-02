@@ -42,8 +42,8 @@ src_install() {
 	mkdir -p "${D}/${pythondir}"
 	cp -r "${S}/pylib" "${D}/${pythondir}/${PN}"
 
-	mkdir -p "${D}/usr/share/icons/hicolor/scalable/apps"
-	cp "${S}/install/hicolor/scalable/apps/${PN}.svg" "${D}/usr/share/icons/hicolor/scalable/apps/${PN}.svg"
+	mkdir -p "${D}/usr/share/icons/hicolor"
+	cp -r "${S}/install/hicolor" "${D}/usr/share/icons/"
 
 	mkdir -p "${D}/usr/share/locale"
 	rsync -rlpt --exclude="${PN}-controller.pot" --exclude="${PN}-tray-applet.pot" --exclude=*.po "${S}/locale/" "${D}/usr/share/locale"
