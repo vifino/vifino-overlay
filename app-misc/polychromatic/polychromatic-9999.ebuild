@@ -28,28 +28,8 @@ RDEPEND="
 	dev-libs/libappindicator:3[introspection]
 	net-libs/webkit-gtk[introspection]
 "
-DEPEND="${RDEPEND}
-	net-misc/rsync
-"
+DEPEND="${RDEPEND}"
 
 src_install() {
-	pythondir=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
-	dobin ${PN}-controller ${PN}-tray-applet
-
-	mkdir -p "${D}/usr/share"
-	cp -r "${S}/data" "${D}/usr/share/${PN}"
-
-	mkdir -p "${D}/${pythondir}"
-	cp -r "${S}/pylib" "${D}/${pythondir}/${PN}"
-
-	mkdir -p "${D}/usr/share/icons/hicolor"
-	cp -r "${S}/install/hicolor" "${D}/usr/share/icons/"
-
-	mkdir -p "${D}/usr/share/locale"
-	rsync -rlpt --exclude="${PN}-controller.pot" --exclude="${PN}-tray-applet.pot" --exclude=*.po "${S}/locale/" "${D}/usr/share/locale"
-
-	mkdir "${D}/usr/share/applications"
-	mkdir "${D}/etc/xdg/autostart"
-	cp "${S}/install/${PN}-controller.desktop" "${S}/install/${PN}-tray-applet.desktop" "${D}/usr/share/applications"
-	cp "${S}/install/${PN}-tray-applet.desktop" "${D}/etc/xdg/autostart"
+	emake PREFIX=/usr DESTDIR="${D}" install
 }
