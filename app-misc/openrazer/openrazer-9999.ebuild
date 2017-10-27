@@ -28,6 +28,7 @@ RDEPEND="
 	dev-python/python-evdev
 	dev-python/pyudev
 	dev-python/notify2
+	dev-python/daemonize
 	x11-misc/xautomation
 	x11-misc/xdotool
 
