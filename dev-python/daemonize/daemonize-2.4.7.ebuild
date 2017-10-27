@@ -5,7 +5,7 @@ EAPI=6
 
 PYTHON_COMPAT=( python2_7 python3_{3,4,5,6} pypy{,3} )
 
-inherit distutils-r1
+inherit distutils-r1 python-r1
 
 DESCRIPTION="daemonize is a library for writing system daemons in Python"
 HOMEPAGE="https://github.com/thesharp/daemonize"
