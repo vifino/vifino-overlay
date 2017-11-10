@@ -18,7 +18,7 @@ RDEPEND="
 	media-libs/libsdl2
 	media-libs/sdl2-image
 	sci-libs/fftw:3.0
-	dev-python/daemonize[$PYTHON_USEDEP
+	dev-python/daemonize[$PYTHON_USEDEP]
 	dev-python/dbus-python[$PYTHON_USEDEP]
 	dev-python/notify2[$PYTHON_USEDEP]
 	dev-python/numpy[$PYTHON_USEDEP]
