@@ -19,7 +19,7 @@ IUSE="alsa i3wm mpd github +network"
 RDEPEND="
 	x11-libs/libxcb
 	dev-lang/python:2.7
-	x11-proto/xcb-proto
+	x11-base/xcb-proto
 	x11-libs/xcb-util-wm
 	x11-libs/xcb-util-image
 
