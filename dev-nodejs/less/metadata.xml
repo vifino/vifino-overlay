@@ -2,8 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>harold@naparst.com</email>
-		<name>Harold Naparst</name>
-		<description>Co Maintainer</description>
+		<email>vifino@tty.sh</email>
+		<name>Adrian Pistol</name>
 	</maintainer>
 </pkgmetadata>
