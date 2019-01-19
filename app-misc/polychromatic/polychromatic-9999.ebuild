@@ -19,6 +19,7 @@ SLOT="0"
 RDEPEND="
 	app-misc/openrazer
 
+	dev-nodejs/less
 	>=dev-lang/python-3.4.5
 	dev-python/pygobject
 	dev-python/setproctitle
