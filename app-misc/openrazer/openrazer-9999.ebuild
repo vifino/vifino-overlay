@@ -40,7 +40,7 @@ BUILD_PARAMS="-j1 -C /usr/src/linux SUBDIRS=${S}/driver"
 MODULE_NAMES="
 	razerkbd(hid:${S}/driver)
 	razermouse(hid:${S}/driver)
-	razerfirefly(hid:${S}/driver)
+	razermousemat(hid:${S}/driver)
 	razerkraken(hid:${S}/driver)
 	razermug(hid:${S}/driver)
 	razercore(hid:${S}/driver)
