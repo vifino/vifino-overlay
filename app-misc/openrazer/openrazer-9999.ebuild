@@ -35,8 +35,8 @@ DEPEND="${RDEPEND}
 "
 
 # This is a bit weird, but it's end result is what we want.
-BUILD_TARGETS="clean modules"
-BUILD_PARAMS="-j1 -C /usr/src/linux SUBDIRS=${S}/driver"
+BUILD_TARGETS="clean driver"
+BUILD_PARAMS="-j1 -C ${S} SUBDIRS=${S}/driver"
 MODULE_NAMES="
 	razerkbd(hid:${S}/driver)
 	razermouse(hid:${S}/driver)
