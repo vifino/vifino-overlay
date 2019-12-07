@@ -17,20 +17,19 @@ LICENSE="GPL-2"
 SLOT="0"
 
 RDEPEND="
-	app-misc/openrazer
-
-	dev-nodejs/less
-	>=dev-lang/python-3.4.5
-	dev-python/pygobject
-	dev-python/setproctitle
-	dev-python/requests
-
-	x11-libs/gtk+[introspection]
-	dev-libs/libappindicator:3[introspection]
-	net-libs/webkit-gtk[introspection]
+    app-misc/openrazer
+    dev-nodejs/less
+    >=dev-lang/python-3.4.5
+    dev-python/distro
+    dev-python/pygobject
+    dev-python/setproctitle
+    dev-python/requests
+    x11-libs/gtk+[introspection]
+    dev-libs/libappindicator:3[introspection]
+    net-libs/webkit-gtk[introspection]
 "
 DEPEND="${RDEPEND}"
 
 src_install() {
-	emake PREFIX=/usr DESTDIR="${D}" install
+    emake PREFIX=/usr DESTDIR="${D}" install
 }
