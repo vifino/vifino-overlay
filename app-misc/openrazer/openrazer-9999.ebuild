@@ -3,7 +3,7 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python3_{5,6} )
+PYTHON_COMPAT=( python3_{5,6,7} )
 
 inherit distutils-r1 git-r3 linux-mod
 
@@ -35,12 +35,12 @@ DEPEND="${RDEPEND}
 "
 
 # This is a bit weird, but it's end result is what we want.
-BUILD_TARGETS="clean modules"
-BUILD_PARAMS="-j1 -C /usr/src/linux SUBDIRS=${S}/driver"
+BUILD_TARGETS="clean driver"
+BUILD_PARAMS="-j1 -C ${S} SUBDIRS=${S}/driver"
 MODULE_NAMES="
 	razerkbd(hid:${S}/driver)
 	razermouse(hid:${S}/driver)
-	razerfirefly(hid:${S}/driver)
+	razermousemat(hid:${S}/driver)
 	razerkraken(hid:${S}/driver)
 	razermug(hid:${S}/driver)
 	razercore(hid:${S}/driver)
