@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+                <email>vifino@tty.sh</email>
+                <name>Adrian "vifino" Pistol</name>
+        </maintainer>
+	<use>
+		<flag name="can">Enable support for CAN connection to VESCs</flag>
+		<flag name="gps">Enable positioning support</flag>
+		<flag name="bluetooth">Enable support for bluetooth connection to VESCs</flag>
+		<flag name="libressl">Use LibreSSL instead of OpenSSL</flag>
+	</use>
+</pkgmetadata>
