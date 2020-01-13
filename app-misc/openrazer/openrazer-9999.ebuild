@@ -42,7 +42,7 @@ MODULE_NAMES="
 	razermouse(hid:${S}/driver)
 	razermousemat(hid:${S}/driver)
 	razerkraken(hid:${S}/driver)
-	razermug(hid:${S}/driver)
+	razeraccessory(hid:${S}/driver)
 	razercore(hid:${S}/driver)
 "
 
