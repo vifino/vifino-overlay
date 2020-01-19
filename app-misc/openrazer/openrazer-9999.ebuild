@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 PYTHON_COMPAT=( python3_{5,6,7} )
 
@@ -15,41 +15,49 @@ LICENSE="GPL-2"
 SLOT="0"
 
 RDEPEND="
-	media-libs/libsdl2
-	media-libs/sdl2-image
-	sci-libs/fftw:3.0
-	dev-python/daemonize[$PYTHON_USEDEP]
-	dev-python/dbus-python[$PYTHON_USEDEP]
-	dev-python/notify2[$PYTHON_USEDEP]
-	dev-python/numpy[$PYTHON_USEDEP]
-	dev-python/pygobject[$PYTHON_USEDEP]
-	dev-python/python-evdev[$PYTHON_USEDEP]
-	dev-python/pyudev[$PYTHON_USEDEP]
-	dev-python/setproctitle[$PYTHON_USEDEP]
-	x11-misc/xautomation
-	x11-misc/xdotool
+    media-libs/libsdl2
+    media-libs/sdl2-image
+    sci-libs/fftw:3.0
+    dev-python/daemonize[$PYTHON_USEDEP]
+    dev-python/dbus-python[$PYTHON_USEDEP]
+    dev-python/notify2[$PYTHON_USEDEP]
+    dev-python/numpy[$PYTHON_USEDEP]
+    dev-python/pygobject[$PYTHON_USEDEP]
+    dev-python/python-evdev[$PYTHON_USEDEP]
+    dev-python/pyudev[$PYTHON_USEDEP]
+    dev-python/setproctitle[$PYTHON_USEDEP]
+    x11-misc/xautomation
+    x11-misc/xdotool
 
-	"
+    "
 DEPEND="${RDEPEND}
-	app-misc/jq
+    app-misc/jq
 "
 
 # This is a bit weird, but it's end result is what we want.
 BUILD_TARGETS="clean driver"
 BUILD_PARAMS="-j1 -C ${S} SUBDIRS=${S}/driver"
 MODULE_NAMES="
-	razerkbd(hid:${S}/driver)
-	razermouse(hid:${S}/driver)
-	razermousemat(hid:${S}/driver)
-	razerkraken(hid:${S}/driver)
-	razeraccessory(hid:${S}/driver)
-	razercore(hid:${S}/driver)
+    razerkbd(hid:${S}/driver)
+    razermouse(hid:${S}/driver)
+    razermousemat(hid:${S}/driver)
+    razerkraken(hid:${S}/driver)
+    razeraccessory(hid:${S}/driver)
+    razercore(hid:${S}/driver)
 "
 
+PATCHES=(
+    "${FILESDIR}"/10_kernel-detection.patch
+)
+
+src_prepare() {
+    default
+}
+
 src_install() {
-	linux-mod_src_install
-	emake DESTDIR="${D}" \
-		ubuntu_udev_install \
-		daemon_install \
-		python_library_install
+    linux-mod_src_install
+    emake DESTDIR="${D}" \
+        ubuntu_udev_install \
+        daemon_install \
+        python_library_install
 }

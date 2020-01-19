@@ -1,0 +1,13 @@
+diff --git a/scripts/ci/install-driver-deps.sh b/scripts/ci/install-driver-deps.sh
+index 124c209..eb05842 100755
+--- a/scripts/ci/install-driver-deps.sh
++++ b/scripts/ci/install-driver-deps.sh
+@@ -2,7 +2,7 @@
+ 
+ apt-get -y install \
+     debhelper \
+-    linux-headers-$(uname -r) \
++    linux-headers-$(basename $( readlink -f /usr/src/linux ) | sed 's/linux-//') \
+     python3 \
+     python3-setuptools
+ 
