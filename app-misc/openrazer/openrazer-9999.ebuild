@@ -5,7 +5,7 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{6,7} )
 
-inherit distutils-r1 git-r3 udev desktop linux-mod
+inherit distutils-r1 python-r1 git-r3 udev desktop linux-mod
 
 DESCRIPTION="Drivers for Razer peripherals on GNU/Linux"
 HOMEPAGE="https://openrazer.github.io/"
@@ -103,6 +103,8 @@ src_install() {
 		if use daemon; then
 			pushd daemon
 			distutils-r1_python_install
+			python_scriptinto /usr/bin
+			python_newscript run_openrazer_daemon.py openrazer_daemon
 			popd
 		fi
 		if use client; then
