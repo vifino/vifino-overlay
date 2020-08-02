@@ -17,7 +17,7 @@ LICENSE="GPL-2"
 SLOT="0"
 
 RDEPEND="
-    app-misc/openrazer
+    app-misc/openrazer[client]
     dev-nodejs/less
     >=dev-lang/python-3.4.5
     dev-python/distro
