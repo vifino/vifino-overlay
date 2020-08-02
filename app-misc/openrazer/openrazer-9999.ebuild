@@ -104,7 +104,7 @@ src_install() {
 			pushd daemon
 			distutils-r1_python_install
 			python_scriptinto /usr/bin
-			python_newscript run_openrazer_daemon.py openrazer_daemon
+			python_newscript run_openrazer_daemon.py openrazer-daemon
 			popd
 		fi
 		if use client; then
