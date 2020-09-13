@@ -51,10 +51,8 @@ BUILD_PARAMS="-C ${S} SUBDIRS=${S}/driver KERNELDIR=${KERNEL_DIR}"
 MODULE_NAMES="
 	razerkbd(hid:${S}/driver)
 	razermouse(hid:${S}/driver)
-	razermousemat(hid:${S}/driver)
 	razerkraken(hid:${S}/driver)
 	razeraccessory(hid:${S}/driver)
-	razercore(hid:${S}/driver)
 "
 
 src_prepare() {
