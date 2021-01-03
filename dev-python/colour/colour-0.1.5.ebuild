@@ -17,6 +17,8 @@ HOMEPAGE="
 	https://github.com/vaab/colour
 "
 
+DEPEND="dev-python/d2to1"
+
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux"
