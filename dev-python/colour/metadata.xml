@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>arabek@users.noreply.github.com</email>
+    <name>Wojciech Arabczyk</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="pypi">colour</remote-id>
+    <remote-id type="github">vaab/colour</remote-id>
+  </upstream>
+</pkgmetadata>
