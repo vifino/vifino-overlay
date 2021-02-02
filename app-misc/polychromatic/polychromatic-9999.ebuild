@@ -18,7 +18,6 @@ RDEPEND="
 	app-misc/openrazer[client]
 	dev-util/intltool
 	dev-lang/sassc
-	dev-nodejs/less
 	dev-libs/libappindicator:3
 	>=dev-lang/python-3.7.0
 	>=dev-python/colorama-0.4.4
