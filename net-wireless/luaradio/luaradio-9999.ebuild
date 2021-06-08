@@ -18,7 +18,7 @@ IUSE="+rt"
 
 DEPEND="
 	>=dev-lang/luajit-2.0.4
-	rt? ( sci-libs/volk sci-libs/liquid-dsp sci-libs/fftw )
+	rt? ( sci-libs/volk net-libs/liquid-dsp sci-libs/fftw )
 "
 RDEPEND="${DEPEND}"
 
