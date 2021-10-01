@@ -92,8 +92,9 @@ src_install() {
 	exeinto "$(get_udevdir)"
 	doexe install_files/udev/razer_mount
 
-    insinto "/usr/share/${PN}"
-    newins daemon/resources/razer.conf razer.conf.example
+	# Insert conf.example so that the daemon doesn't complain
+    	insinto "/usr/share/${PN}"
+    	newins daemon/resources/razer.conf razer.conf.example
 
 	if use daemon; then
 		newicon logo/openrazer-chroma.svg openrazer-daemon.svg
