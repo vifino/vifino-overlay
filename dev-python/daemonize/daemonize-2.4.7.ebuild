@@ -14,6 +14,9 @@ SRC_URI="https://github.com/thesharp/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~sparc ~x86"
-IUSE=""
+
+IUSE="doc"
 
 DEPEND=">=dev-python/setuptools-33.1.1[${PYTHON_USEDEP}]"
+
+DOCS=( README.markdown )
