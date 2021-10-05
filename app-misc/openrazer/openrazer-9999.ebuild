@@ -14,7 +14,7 @@ EGIT_REPO_URI="https://github.com/${PN}/${PN}.git"
 LICENSE="GPL-2"
 SLOT="0"
 
-IUSE="+daemon client"
+IUSE="+daemon doc client"
 REQUIRED_USE="
 	daemon? ( ${PYTHON_REQUIRED_USE} )
 	client? ( daemon )
@@ -44,6 +44,8 @@ DEPEND="${RDEPEND}
 	app-misc/jq
 	virtual/linux-sources
 "
+
+DOCS=( README.markdown )
 
 # This is a bit weird, but it's end result is what we want.
 BUILD_TARGETS="clean driver"
