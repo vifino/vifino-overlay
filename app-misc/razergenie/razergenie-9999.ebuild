@@ -15,6 +15,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux"
 
+IUSE="doc"
+
 RDEPEND="
 	app-misc/openrazer[daemon]
 	app-misc/razer-test
@@ -26,6 +28,8 @@ RDEPEND="
 	dev-qt/qtwidgets
 "
 DEPEND="${RDEPEND}"
+
+DOCS=( README.markdown )
 
 src_configure() {
 	local emesonargs=(
