@@ -14,6 +14,7 @@ EGIT_COMMIT="dcdc92abcaf9ba91e38ea4dbddf552d49b150b50"
 
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~amd64 ~x86 ~arm ~arm64"
 
 IUSE="+daemon doc client"
 REQUIRED_USE="
