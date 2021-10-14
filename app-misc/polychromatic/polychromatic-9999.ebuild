@@ -2,44 +2,39 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
-inherit git-r3 linux-mod meson
+PYTHON_COMPAT=( python3_{6..9} )
 
-DESCRIPTION="A graphical front end for managing Razer peripherals under GNU/Linux."
-HOMEPAGE="https://github.com/lah7/polychromatic"
-EGIT_REPO_URI="https://github.com/lah7/polychromatic.git"
+inherit python-r1 git-r3 meson
+
+DESCRIPTION="Polychromatic is a frontend for OpenRazer that enables Razer devices to control lighting effects and more on GNU/Linux."
+HOMEPAGE="https://polychromatic.app"
+EGIT_REPO_URI="https://github.com/polychromatic/polychromatic.git"
 EGIT_CLONE_TYPE="shallow"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
 RDEPEND="
-	app-misc/openrazer[client]
-	dev-util/intltool
-	dev-lang/sassc
+	${PYTHON_DEPS}
+	app-misc/openrazer[client,${PYTHON_USEDEP}]
 	dev-libs/libappindicator:3
-	>=dev-lang/python-3.7.0
-	>=dev-python/colorama-0.4.4
-	dev-python/colour
-	dev-python/distro
-	dev-python/pygobject
-	dev-python/setproctitle
-	dev-python/requests
-	dev-python/PyQt5
-	dev-python/PyQtWebEngine
+	>=dev-python/colorama-0.4.4[${PYTHON_USEDEP}]
+	dev-python/colour[${PYTHON_USEDEP}]
+	dev-python/distro[${PYTHON_USEDEP}]
+	dev-python/pygobject[${PYTHON_USEDEP}]
+	dev-python/setproctitle[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/PyQt5[${PYTHON_USEDEP}]
+	dev-python/PyQtWebEngine[${PYTHON_USEDEP}]
 	dev-qt/qtsvg
 "
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/intltool
+	dev-lang/sassc
+"
 
-src_configure() {
-	meson_src_configure
-}
 
-src_compile() {
-	meson_src_compile
-}
-
-src_install() {
-	meson_src_install
-}
