@@ -47,7 +47,7 @@ DEPEND="${RDEPEND}
 	virtual/linux-sources
 "
 
-DOCS=( README.markdown )
+DOCS=( README.md )
 
 # This is a bit weird, but it's end result is what we want.
 BUILD_TARGETS="clean driver"

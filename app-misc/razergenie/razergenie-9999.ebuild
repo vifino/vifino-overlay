@@ -29,7 +29,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-DOCS=( README.markdown )
+DOCS=( README.md )
 
 src_configure() {
 	local emesonargs=(
