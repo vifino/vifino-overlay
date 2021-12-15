@@ -5,4 +5,8 @@
 		<email>vifino@tty.sh</email>
 		<name>Adrian Pistol</name>
 	</maintainer>
+<	<maintainer type="person">
+		<email>arabek@user.noreply.github.com</email>
+		<name>Wojtek Arabczyk</name>
+	</maintainer>
 </pkgmetadata>
