@@ -61,6 +61,10 @@ MODULE_NAMES="
 
 src_prepare() {
 	default
+	
+	# Add category to .desktop file
+	sed -i '/^Icon=*/a Categories=System;HardwareSettings;' \
+		install_files/desktop/openrazer-daemon.desktop || die "Failed sed replace of desktop file"
 
 	if use daemon; then
 		# Change path to icon
