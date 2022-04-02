@@ -42,7 +42,6 @@ RDEPEND="
 	client? ( dev-python/numpy[$PYTHON_USEDEP] )
 	"
 DEPEND="${RDEPEND}
-	sys-apps/sed
 	app-misc/jq
 	virtual/linux-sources
 "
@@ -60,8 +59,6 @@ MODULE_NAMES="
 "
 
 src_prepare() {
-	default
-	
 	# Add category to .desktop file
 	sed -i '/^Icon=*/a Categories=System;HardwareSettings;' \
 		install_files/desktop/openrazer-daemon.desktop || die "Failed sed replace of desktop file"
@@ -71,6 +68,8 @@ src_prepare() {
 		sed -i 's/^Icon=.*/Icon=openrazer-daemon/' \
 			install_files/desktop/openrazer-daemon.desktop || die "Failed sed replace of desktop file"
 	fi
+	
+	default
 }
 
 src_compile() {
