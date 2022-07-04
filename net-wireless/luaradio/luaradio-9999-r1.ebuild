@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=8
 
 inherit git-r3
 
 DESCRIPTION="LuaRadio is a lightweight, embeddable flow graph signal processing framework for software-defined radio"
-HOMEPAGE="http://luaradio.io"
+HOMEPAGE="https://luaradio.io"
 EGIT_REPO_URI="https://github.com/vsergeev/luaradio.git"
 EGIT_CLONE_TYPE="shallow"
 
@@ -18,7 +18,7 @@ IUSE="+rt"
 
 DEPEND="
 	>=dev-lang/luajit-2.0.4
-	rt? ( sci-libs/volk net-libs/liquid-dsp sci-libs/fftw )
+	rt? ( net-libs/volk net-libs/liquid-dsp sci-libs/fftw )
 "
 RDEPEND="${DEPEND}"
 
