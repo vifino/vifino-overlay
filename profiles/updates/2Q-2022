@@ -1,0 +1,3 @@
+move x11-misc/wmutils-core x11-wm/wmutils-core
+move x11-misc/wmutils-opt x11-wm/wmutils-opt
+move sci-libs/volk net-libs/volk
