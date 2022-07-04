@@ -1,16 +1,16 @@
 # Copyright 1999-2020 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{6..9} )
+PYTHON_COMPAT=( python3_{6..10} )
 
 inherit distutils-r1 python-r1 git-r3 udev desktop linux-mod
 
 DESCRIPTION="Drivers for Razer peripherals on GNU/Linux"
 HOMEPAGE="https://openrazer.github.io/"
 EGIT_REPO_URI="https://github.com/${PN}/${PN}.git"
-EGIT_COMMIT="dcdc92abcaf9ba91e38ea4dbddf552d49b150b50"
+EGIT_COMMIT="122b4d5a67058754e05efd72f0f487c5f1aca9b0"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -42,7 +42,6 @@ RDEPEND="
 	client? ( dev-python/numpy[$PYTHON_USEDEP] )
 	"
 DEPEND="${RDEPEND}
-	sys-apps/sed
 	app-misc/jq
 	virtual/linux-sources
 "
@@ -60,13 +59,17 @@ MODULE_NAMES="
 "
 
 src_prepare() {
-	default
+	# Add category to .desktop file
+	sed -i '/^Icon=*/a Categories=System;HardwareSettings;' \
+		install_files/desktop/openrazer-daemon.desktop || die "Failed sed replace of desktop file"
 
 	if use daemon; then
 		# Change path to icon
 		sed -i 's/^Icon=.*/Icon=openrazer-daemon/' \
 			install_files/desktop/openrazer-daemon.desktop || die "Failed sed replace of desktop file"
 	fi
+	
+	default
 }
 
 src_compile() {
