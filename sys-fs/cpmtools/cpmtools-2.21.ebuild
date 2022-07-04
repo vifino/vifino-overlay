@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=8
 
 DESCRIPTION="This package allows to access CP/M file systems similar to the well-known mtools package, which accesses MSDOS file systems"
 HOMEPAGE="http://www.moria.de/~michael/cpmtools/"
