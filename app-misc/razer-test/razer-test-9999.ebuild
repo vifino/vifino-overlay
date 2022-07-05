@@ -1,8 +1,8 @@
-# Copyright 1999-2021 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=8
 
 inherit git-r3 meson
 
@@ -15,13 +15,17 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux"
 
-RDEPEND="
+DEPEND="
 	virtual/libudev
 	dev-libs/hidapi
-	dev-qt/qtcore
-	dev-qt/qtdbus
+	dev-qt/qtcore:5
+	dev-qt/qtdbus:5
 "
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
+BDEPEND="
+	dev-qt/linguist-tools:5
+	virtual/pkgconfig
+"
 
 src_configure() {
 	local emesonargs=(
@@ -30,12 +34,4 @@ src_configure() {
 		-Dbuild_tests="false"
 	)
 	meson_src_configure
-}
-
-src_compile() {
-	meson_src_compile
-}
-
-src_install() {
-	meson_src_install
 }
