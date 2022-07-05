@@ -1,8 +1,8 @@
-# Copyright 1999-2021 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=8
 
 inherit git-r3 meson
 
@@ -14,16 +14,21 @@ EGIT_CLONE_TYPE="shallow"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux"
+IUSE="razer-test"
 
-RDEPEND="
-	app-misc/openrazer[daemon]
-	app-misc/razer-test
-	dev-qt/qtcore
-	dev-qt/qtdbus
-	dev-qt/qtgui
-	dev-qt/qtxml
+DEPEND="
+	razer-test? ( app-misc/razer-test )
+	!razer-test? ( app-misc/openrazer[daemon] )
+	dev-qt/qtcore:5
+	dev-qt/qtdbus:5
+	dev-qt/qtgui:5
+	dev-qt/qtxml:5
 "
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
+BDEPEND="
+	dev-qt/linguist-tools:5
+	virtual/pkgconfig
+"
 
 src_configure() {
 	local emesonargs=(
@@ -31,12 +36,4 @@ src_configure() {
 		-Ddemo="false"
 	)
 	meson_src_configure
-}
-
-src_compile() {
-	meson_src_compile
-}
-
-src_install() {
-	meson_src_install
 }
