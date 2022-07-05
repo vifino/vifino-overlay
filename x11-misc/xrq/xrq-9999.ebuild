@@ -4,16 +4,14 @@
 
 EAPI=8
 
-inherit eutils git-r3
+inherit git-r3
 
 DESCRIPTION="X Resource Query, A program for querying the X Resources Database from the command line"
 HOMEPAGE="https://github.com/arianon/xrq"
-SRC_URI=""
 EGIT_REPO_URI="https://github.com/arianon/xrq.git"
 
 LICENSE="ISC"
 SLOT="0"
-IUSE=""
 
 RDEPEND="x11-libs/libX11"
 DEPEND="${RDEPEND}"
