@@ -2,15 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=8
 
 inherit git-r3 meson
 
 DESCRIPTION="Qt application for configuring your Razer devices under GNU/Linux."
 HOMEPAGE="https://github.com/z3ntu/RazerGenie"
 EGIT_REPO_URI="https://github.com/z3ntu/RazerGenie.git"
-EGIT_COMMIT="7e4706058d2fec5ad72e6648edd3b091620c29f6"
 EGIT_CLONE_TYPE="shallow"
+EGIT_COMMIT="7e4706058d2fec5ad72e6648edd3b091620c29f6"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -18,17 +18,19 @@ KEYWORDS="~amd64 ~amd64-linux"
 
 IUSE="doc"
 
-RDEPEND="
-	app-misc/openrazer[daemon]
-	app-misc/razer-test
+DEPEND="
 	dev-libs/libopenrazer
-	dev-qt/qtcore
-	dev-qt/qtdbus
-	dev-qt/qtgui
-	dev-qt/qtnetwork
-	dev-qt/qtwidgets
+	dev-qt/qtcore:5
+	dev-qt/qtdbus:5
+	dev-qt/qtgui:5
+	dev-qt/qtnetwork:5
+	dev-qt/qtwidgets:5
 "
-DEPEND="${RDEPEND}"
+RDEPEND="${DDEPEND}"
+BDEPEND="
+	dev-qt/linguist-tools:5
+	virtual/pkgconfig
+"
 
 DOCS=( README.md )
 
@@ -40,10 +42,4 @@ src_configure() {
 	meson_src_configure
 }
 
-src_compile() {
-	meson_src_compile
-}
 
-src_install() {
-	meson_src_install
-}

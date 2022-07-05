@@ -4,16 +4,14 @@
 
 EAPI=8
 
-inherit eutils git-r3
+inherit git-r3
 
 DESCRIPTION="utilities for getting info about displays. @tudurom's personal fork"
 HOMEPAGE="https://github.com/tudurom/disputils"
-SRC_URI=""
 EGIT_REPO_URI="https://github.com/tudurom/disputils.git"
 
 LICENSE="ISC"
 SLOT="0"
-IUSE=""
 
 RDEPEND="
 	x11-libs/libxcb
