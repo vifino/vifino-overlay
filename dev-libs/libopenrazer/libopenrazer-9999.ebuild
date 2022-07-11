@@ -17,8 +17,7 @@ KEYWORDS="~amd64 ~amd64-linux"
 IUSE="razer-test"
 
 DEPEND="
-	razer-test? ( app-misc/razer-test )
-	!razer-test? ( app-misc/openrazer[daemon] )
+	app-misc/razer-test
 	dev-qt/qtcore:5
 	dev-qt/qtdbus:5
 	dev-qt/qtgui:5
